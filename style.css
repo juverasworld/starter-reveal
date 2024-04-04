@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Kobe:wght@400;500;600;700&display=swap");
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +17,8 @@ body {
     padding: 0 40px;
     display: flex;
     justify-content: space-between;
-    font-family: "Kobe", sans-serif;
+    font-family:  'Montserrat', sans-serif;
+ 
     font-weight: 400;
     text-transform: uppercase;
     line-height: 100px;
@@ -88,4 +90,19 @@ body {
     height: 50vh;
     bottom: -10rem;
     background: #e3dcc7;
+}
+
+
+.title{
+    margin-top: 10rem;
+    text-align: center;
+    font-family:'Eater', cursive;;
+    font-size: 7em;
+    color:#393833 ;
+    overflow-x: hidden;
+}
+
+.title .letter{
+    display: inline-block;
+    line-height: 1em;
 }

@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kobe:wght@400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Eater&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
@@ -35,10 +36,47 @@
         <div class="block b-7"></div>
     </div>
     <div class="overlay"></div>
-    <p class="title">Reach the fullest</p>
+    <p class="title">
+        <span class="letter">
+
+            Reach Me here
+        </span>
+    </p>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
-    <script src="/style.css"></script>
+    <script>
+        // basically to wrap every letter in a span
+        var textWrapper = document.querySelector(".title");
+        textWrapper.innerHTML = textWrapper.textContent.replace(
+            /\S/g,
+            "<span class='letter'>$&</span>"
+        );
+        anime.timeline().add({
+            targets: ".title .letter",
+            translateY: [-200, 0],
+            easing: "easeOutExpo",
+            duration: 1400,
+            delay: (el, i) => 6500 + 30 * i,
+        });
+
+        TweenMax.staggerFrom(".container > .block", 2,{
+            y: "110%",
+            ease: Expo.easeInOut,
+            delay:1
+        }, 0.4);
+        TweenMax.to(".overlay", 0.5,{
+            y:"100%",
+            ease: Expo.easeInOut,
+            delay:5.2,
+        });
+
+        TweenMax.to(".container", 2, {
+            scale: "2",
+            y: "90",
+            ease: Expo.easeInOut,
+            delay:5.5,
+        })
+    </script>
 </body>
 
 </html>
